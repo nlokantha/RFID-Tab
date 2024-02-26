@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Fragment.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/tag_real_linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#EEEEEE"
+        android:paddingTop="5sp"
+        android:layout_above="@+id/TextView_kb"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tag_type"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3.0sp"
+                android:paddingRight="3.0sp" >
+
+
+                <TextView
+                    android:id="@+id/id_text"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:textColor="#ff444444"
+                    android:singleLine="true"
+                    android:text="ID"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/epc_text"
+                    android:layout_width="0dip"
+                    android:layout_weight="5"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:textColor="#ff333333"
+                    android:singleLine="true"
+                    android:text="EPC/TID"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/temp_text"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:textColor="#ff333333"
+                    android:singleLine="true"
+                    android:visibility="gone"
+                    android:text="Temperature"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/times_text"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:textColor="#ff333333"
+                    android:singleLine="true"
+                    android:text="times"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/rssi_text"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:textSize="10sp"
+                    android:textColor="#ff333333"
+                    android:singleLine="true"
+                    android:text="rssi"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="#ff555555" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/TextView_kb"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="5dp"
+                    android:layout_height="match_parent"
+                    android:background="#BBBBBB" />
+
+                <ListView
+                    android:id="@+id/tag_real_list_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fadingEdge="none"
+                    android:paddingLeft="3.0sp"
+                    android:paddingRight="3.0sp"
+                    android:scrollbars="vertical"
+                    android:scrollingCache="false"
+                    android:divider="#63a219"
+                    android:dividerHeight="1px"
+                    android:transcriptMode="alwaysScroll" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView_kb"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/horizontalScrollView1"
+        android:background="@color/lightblue"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="fill_parent"
+        android:layout_above="@+id/scanlayout1"
+        android:orientation="horizontal"
+        android:layout_height="30dp" >
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="number"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tx_num"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#cc0000"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/scantime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text ="ttime"
+            android:layout_marginLeft="10dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tx_time"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#cc0000"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/scanlayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+
+
+        <CheckBox
+            android:id="@+id/chk_single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/button_scan"
+            android:text="Single"/>"
+
+        <Button
+            android:id="@+id/button_scan"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text = "btscan" />
+
+        <CheckBox
+            android:id="@+id/chk_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/button_scan"
+            android:checked="true"
+            android:text="Temperature"/>"
+
+    </RelativeLayout>
+
+</RelativeLayout>
